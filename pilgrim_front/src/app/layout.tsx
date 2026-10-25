@@ -1,6 +1,7 @@
 import { Inter, Lora } from "next/font/google";
 
 import { SITE } from "@/shared/config/site";
+import { THEME_INIT_SCRIPT } from "@/shared/lib/theme";
 import { SiteFooter } from "@/widgets/site-footer/site-footer";
 import { SiteHeader } from "@/widgets/site-header/site-header";
 
@@ -38,12 +39,18 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f9f7f3",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f9f7f3" },
+    { media: "(prefers-color-scheme: dark)", color: "#12181c" },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="ru" className={`${inter.variable} ${lora.variable}`}>
+    <html lang="ru" className={`${inter.variable} ${lora.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body>
         <a href="#main" className="skip-link">
           Перейти к содержимому

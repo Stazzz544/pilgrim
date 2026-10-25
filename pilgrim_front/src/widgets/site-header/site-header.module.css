@@ -120,7 +120,7 @@
 
 @media (max-width: 640px) {
   .support,
-  .icon-link:not(:last-child) {
+  .icon-link:not(:last-child, .theme) {
     display: none;
   }
 }

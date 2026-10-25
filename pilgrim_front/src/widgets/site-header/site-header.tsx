@@ -10,6 +10,7 @@ import { ButtonLink } from "@/shared/ui/button/button";
 import { Icon } from "@/shared/ui/icon/icon";
 import { Logo } from "@/shared/ui/logo/logo";
 import { Modal } from "@/shared/ui/modal/modal";
+import { ThemeToggle } from "@/shared/ui/theme-toggle/theme-toggle";
 
 import type { JSX } from "react";
 
@@ -57,6 +58,7 @@ export function SiteHeader(): JSX.Element {
           >
             <Icon name="vk" size={24} />
           </a>
+          <ThemeToggle className={`${styles["icon-link"]} ${styles["theme"]}`} />
           <button
             type="button"
             className={styles["icon-link"]}
