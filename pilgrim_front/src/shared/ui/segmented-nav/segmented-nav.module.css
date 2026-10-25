@@ -1,0 +1,29 @@
+.nav {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 4px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-muted);
+  overflow-x: auto;
+}
+
+.item {
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+.item:hover {
+  color: var(--color-text);
+}
+
+.item[aria-current="page"] {
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+}

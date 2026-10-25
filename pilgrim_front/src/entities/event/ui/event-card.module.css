@@ -1,9 +1,13 @@
 .card {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(112px, 38%) minmax(0, 1fr);
+  grid-template-columns: minmax(112px, min(38%, 320px)) minmax(0, 1fr);
   gap: clamp(var(--space-3), 2.5vw, var(--space-5));
   align-items: start;
+}
+
+.vertical {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .media {

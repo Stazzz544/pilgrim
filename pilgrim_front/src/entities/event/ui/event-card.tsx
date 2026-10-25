@@ -19,6 +19,7 @@ type EventCardProps = {
   event: Event;
   status?: EventStatus | null;
   showCategory?: boolean;
+  layout?: "horizontal" | "vertical";
   headingLevel?: "h2" | "h3";
   priority?: boolean;
   className?: string;
@@ -28,18 +29,19 @@ export function EventCard({
   event,
   status = null,
   showCategory,
+  layout = "horizontal",
   headingLevel: Heading = "h3",
   priority,
   className,
 }: EventCardProps): JSX.Element {
   return (
-    <article className={cn(styles["card"], className)}>
+    <article className={cn(styles["card"], styles[layout], className)}>
       <div className={styles["media"]}>
         <Image
           src={asset(event.cover.thumbSrc)}
           alt={event.cover.alt}
           fill
-          sizes="(max-width: 640px) 40vw, 260px"
+          sizes={layout === "vertical" ? "(max-width: 640px) 100vw, 360px" : "(max-width: 640px) 40vw, 300px"}
           className={styles["image"]}
           priority={priority}
         />

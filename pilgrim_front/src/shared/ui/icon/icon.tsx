@@ -67,6 +67,7 @@ const STROKE_ICONS = {
   chat: <path d="M4 5h16v11H9l-5 4V5Z" />,
   ruble: <path d="M8 20V4h6a4 4 0 0 1 0 8H6M6 16h9" />,
   check: <path d="m5 12.5 4.5 4.5L19 7.5" />,
+  mountain: <path d="m3 20 6.5-11 4 6.5 2.5-4L21 20Z" />,
   archive: (
     <>
       <rect x="3" y="4" width="18" height="5" rx="1" />
