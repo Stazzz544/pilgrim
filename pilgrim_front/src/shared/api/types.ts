@@ -8,6 +8,13 @@ export type Category = {
 
 export type Difficulty = "easy" | "medium" | "hard";
 
+export type Publication = "draft" | "published";
+
+export type Authored = {
+  authorId?: string;
+  publication?: Publication;
+};
+
 export type PhotoCredit = {
   author: string;
   license: string;
@@ -29,7 +36,7 @@ export type EventProgramItem = {
   text: string;
 };
 
-export type Event = {
+export type Event = Authored & {
   id: number;
   slug: string;
   title: string;
@@ -52,6 +59,7 @@ export type Event = {
   program: EventProgramItem[];
   equipment: string[];
   vkUrl: string;
+  isArchived?: boolean;
 };
 
 export type EventStatus = "upcoming" | "ongoing" | "past";
@@ -69,7 +77,7 @@ export type EventsQuery = {
   ordering?: EventsOrdering;
 };
 
-export type Post = {
+export type Post = Authored & {
   id: number;
   slug: string;
   title: string;
@@ -81,7 +89,7 @@ export type Post = {
   eventSlug: string | null;
 };
 
-export type Album = {
+export type Album = Authored & {
   id: number;
   slug: string;
   title: string;

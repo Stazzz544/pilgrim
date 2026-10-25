@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { postHref } from "@/shared/api/routes";
 import { asset } from "@/shared/lib/asset";
 import { cn } from "@/shared/lib/cn";
 import { formatDayMonth, parseDateKey } from "@/shared/lib/date";
@@ -35,7 +36,7 @@ export function PostPreviewCard({ post, className }: PostPreviewCardProps): JSX.
         {formatDayMonth(post.publishedAt)} {parseDateKey(post.publishedAt).year}
       </time>
       <h3 className={styles["title"]}>
-        <Link href={`/blog/${post.slug}`} className={styles["link"]}>
+        <Link href={postHref(post.slug)} className={styles["link"]}>
           {post.title}
         </Link>
       </h3>

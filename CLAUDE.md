@@ -12,6 +12,8 @@
 - `basePath` задаётся из `NEXT_PUBLIC_BASE_PATH`. `next/link` префиксует его сам, а пути к файлам из `public/` и `src` у картинок — только через `asset()` из `@/shared/lib/asset`.
 - В Git Bash сборка с basePath запускается с `MSYS_NO_PATHCONV=1`, иначе `/pilgrim` превращается в `C:/Program Files/Git/pilgrim`.
 - На Windows `next build` кладёт файлы префетча сегментов в папки вместо `__next.a.b.txt` (баг экспорта 16.4), поэтому локально префетч отдаёт 404. На Linux в CI это не воспроизводится, навигация при этом работает.
+- Списки и страницы записей берут данные через `useMerged*` из `features/editor/model/content`, иначе правки из демо-редактора не видны.
+- Ссылки на записи строятся только через `eventHref` / `postHref` / `albumHref` из `@/shared/api/routes`. Новые записи открываются через `/…/view?slug=`, потому что статических страниц для них нет.
 - Деплой: `.github/workflows/deploy.yml` на push в `main`. basePath и URL сайта берутся из `actions/configure-pages`.
 - Всё, что зависит от текущей даты (предстоящие или архив, «сегодня» в календаре), считается на клиенте, а не при сборке.
 
@@ -23,6 +25,7 @@
 - Структура `src/` (FSD-lite), нижние слои не импортируют верхние:
   - `app` — роуты;
   - `widgets` — блоки страниц;
+  - `features/editor` — демо-редактор: сессия и роли, хранилище правок в IndexedDB, формы, загрузка фото;
   - `entities/{event,post,album}` — карточки и модели сущностей;
   - `shared/{ui,lib,api,config,styles}` — общий код;
   - `mocks` — демо-данные.

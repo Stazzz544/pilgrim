@@ -1,6 +1,7 @@
 "use client";
 
 import { EventCard, EventCardSkeleton } from "@/entities/event/ui/event-card";
+import { useMergedEvents } from "@/features/editor/model/content";
 import { filterEvents, getEventStatus } from "@/shared/api/events";
 import { useToday } from "@/shared/lib/use-today";
 
@@ -14,8 +15,9 @@ type UpcomingEventsProps = {
   limit: number;
 };
 
-export function UpcomingEvents({ events, limit }: UpcomingEventsProps): JSX.Element {
+export function UpcomingEvents({ events: baseEvents, limit }: UpcomingEventsProps): JSX.Element {
   const today = useToday();
+  const events = useMergedEvents(baseEvents);
 
   if (!today) {
     return (

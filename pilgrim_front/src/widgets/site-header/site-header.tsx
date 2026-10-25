@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+import { EditorEntry } from "@/features/editor/ui/editor-buttons";
 import { MAIN_NAV, SECONDARY_NAV, isActivePath } from "@/shared/config/navigation";
 import { SITE } from "@/shared/config/site";
 import { ButtonLink } from "@/shared/ui/button/button";
@@ -45,6 +46,7 @@ export function SiteHeader(): JSX.Element {
         </nav>
 
         <div className={styles["actions"]}>
+          <EditorEntry className={styles["editor"]} />
           <ButtonLink href="/donate" size="md" className={styles["support"]}>
             <Icon name="heart" size={18} />
             Поддержать проект
@@ -92,6 +94,7 @@ export function SiteHeader(): JSX.Element {
           </ul>
         </nav>
         <div className={styles["drawer-footer"]}>
+          <EditorEntry onNavigate={closeMenu} />
           <ButtonLink href="/donate" fullWidth onClick={closeMenu}>
             <Icon name="heart" size={18} />
             Поддержать проект

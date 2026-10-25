@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { albumHref } from "@/shared/api/routes";
 import { asset } from "@/shared/lib/asset";
 import { cn } from "@/shared/lib/cn";
 import { MONTHS_NOMINATIVE, parseDateKey } from "@/shared/lib/date";
@@ -40,7 +41,7 @@ export function AlbumCard({ album, className }: AlbumCardProps): JSX.Element {
       </div>
       <span className={styles["category"]}>{album.category.name}</span>
       <h2 className={styles["title"]}>
-        <Link href={`/gallery/${album.slug}`} className={styles["link"]}>
+        <Link href={albumHref(album.slug)} className={styles["link"]}>
           {album.title}
         </Link>
       </h2>

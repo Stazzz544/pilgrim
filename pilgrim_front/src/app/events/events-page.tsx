@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 
+import { EditorAddButton } from "@/features/editor/ui/editor-buttons";
 import { getCategories } from "@/shared/api/content";
 import { getEvents } from "@/shared/api/events";
 import { SegmentedNav } from "@/shared/ui/segmented-nav/segmented-nav";
@@ -32,11 +33,14 @@ export async function EventsPage({ scope, title, lead }: EventsPageProps): Promi
           <h1 className="page-title">{title}</h1>
           <p className="page-lead">{lead}</p>
         </div>
-        <SegmentedNav
-          label="Мероприятия"
-          items={TABS}
-          current={scope === "archive" ? "/events/archive" : "/events"}
-        />
+        <div className={styles["tools"]}>
+          <EditorAddButton kind="events" />
+          <SegmentedNav
+            label="Мероприятия"
+            items={TABS}
+            current={scope === "archive" ? "/events/archive" : "/events"}
+          />
+        </div>
       </header>
       <Suspense fallback={<Skeleton height={560} radius="var(--radius-md)" />}>
         <EventsCatalog events={events} categories={categories} scope={scope} />

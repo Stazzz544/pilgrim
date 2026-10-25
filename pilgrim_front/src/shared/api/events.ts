@@ -4,8 +4,11 @@ import { toPage } from "./paginate";
 
 import type { Event, EventsQuery, EventStatus, Paginated } from "./types";
 
-export function getEventStatus(event: Pick<Event, "startDate" | "endDate">, today: string): EventStatus {
-  if (event.endDate < today) {
+export function getEventStatus(
+  event: Pick<Event, "startDate" | "endDate" | "isArchived">,
+  today: string,
+): EventStatus {
+  if (event.isArchived || event.endDate < today) {
     return "past";
   }
 

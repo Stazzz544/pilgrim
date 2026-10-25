@@ -74,6 +74,12 @@ const STROKE_ICONS = {
   ruble: <path d="M8 20V4h6a4 4 0 0 1 0 8H6M6 16h9" />,
   check: <path d="m5 12.5 4.5 4.5L19 7.5" />,
   mountain: <path d="m3 20 6.5-11 4 6.5 2.5-4L21 20Z" />,
+  pen: <path d="M4 20h4L19.5 8.5a2.1 2.1 0 0 0-3-3L5 17v3ZM14.5 7.5l2 2" />,
+  plus: <path d="M12 5v14M5 12h14" />,
+  trash: <path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-12M9 7V4h6v3" />,
+  upload: <path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" />,
+  logout: <path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 17l-5-5 5-5M5 12h11" />,
+  star: <path d="m12 4 2.4 5 5.4.7-4 3.8 1 5.4L12 16.3 7.2 19l1-5.4-4-3.8 5.4-.7Z" />,
   archive: (
     <>
       <rect x="3" y="4" width="18" height="5" rx="1" />

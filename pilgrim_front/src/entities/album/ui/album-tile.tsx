@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { albumHref } from "@/shared/api/routes";
 import { asset } from "@/shared/lib/asset";
 import { cn } from "@/shared/lib/cn";
 
@@ -16,7 +17,7 @@ type AlbumTileProps = {
 
 export function AlbumTile({ album, className }: AlbumTileProps): JSX.Element {
   return (
-    <Link href={`/gallery/${album.slug}`} className={cn(styles["tile"], className)}>
+    <Link href={albumHref(album.slug)} className={cn(styles["tile"], className)}>
       <Image
         src={asset(album.cover.thumbSrc)}
         alt={album.cover.alt}

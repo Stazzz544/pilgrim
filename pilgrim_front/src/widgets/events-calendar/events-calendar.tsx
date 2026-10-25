@@ -1,10 +1,10 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useMemo } from "react";
 
 import { eventsInRange, groupEventsByDay } from "@/entities/event/lib/events-by-day";
 import { EventCard } from "@/entities/event/ui/event-card";
+import { useMergedEvents } from "@/features/editor/model/content";
 import { getEventStatus } from "@/shared/api/events";
 import {
   dateKeyFromParts,
@@ -38,10 +38,11 @@ type EventsCalendarProps = {
   events: Event[];
 };
 
-export function EventsCalendar({ events }: EventsCalendarProps): JSX.Element {
+export function EventsCalendar({ events: baseEvents }: EventsCalendarProps): JSX.Element {
   const today = useToday();
+  const events = useMergedEvents(baseEvents);
   const searchParams = useSearchParams();
-  const byDay = useMemo(() => groupEventsByDay(events), [events]);
+  const byDay = groupEventsByDay(events);
 
   if (!today) {
     return <Skeleton height={640} radius="var(--radius-md)" />;

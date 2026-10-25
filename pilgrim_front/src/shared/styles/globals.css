@@ -235,6 +235,14 @@ button {
   font-size: var(--text-3xl);
 }
 
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-6);
+}
+
 .page-body {
   margin-top: var(--space-6);
 }

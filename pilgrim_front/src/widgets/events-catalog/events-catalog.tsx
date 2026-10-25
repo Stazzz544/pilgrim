@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { DIFFICULTY_LABELS, DIFFICULTY_OPTIONS } from "@/entities/event/model/difficulty";
 import { EventCard, EventCardSkeleton } from "@/entities/event/ui/event-card";
+import { useMergedEvents } from "@/features/editor/model/content";
 import { filterEvents, getEventStatus } from "@/shared/api/events";
 import { plural } from "@/shared/lib/plural";
 import { replaceSearchParams } from "@/shared/lib/search-params";
@@ -47,8 +48,9 @@ type EventsCatalogProps = {
   scope: EventsScope;
 };
 
-export function EventsCatalog({ events, categories, scope }: EventsCatalogProps): JSX.Element {
+export function EventsCatalog({ events: baseEvents, categories, scope }: EventsCatalogProps): JSX.Element {
   const today = useToday();
+  const events = useMergedEvents(baseEvents);
   const searchParams = useSearchParams();
   const [search, setSearch] = useState(() => searchParams.get("q") ?? "");
 

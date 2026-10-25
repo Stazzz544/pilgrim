@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { postHref } from "@/shared/api/routes";
 import { cn } from "@/shared/lib/cn";
 import { formatDate } from "@/shared/lib/date";
 import { MoreLink } from "@/shared/ui/section-header/section-header";
@@ -26,14 +27,14 @@ export function PostCard({ post, media, className }: PostCardProps): JSX.Element
           {formatDate(post.publishedAt)}
         </time>
         <h2 className={styles["title"]}>
-          <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+          <Link href={postHref(post.slug)}>{post.title}</Link>
         </h2>
       </header>
       <p className={styles["text"]}>{lead}</p>
       {media}
       <footer className={styles["footer"]}>
         <TagList tags={post.tags} />
-        {rest.length > 0 && <MoreLink href={`/blog/${post.slug}`}>Читать полностью</MoreLink>}
+        {rest.length > 0 && <MoreLink href={postHref(post.slug)}>Читать полностью</MoreLink>}
       </footer>
     </article>
   );

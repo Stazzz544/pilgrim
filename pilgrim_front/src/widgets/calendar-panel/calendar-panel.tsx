@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 import { eventsInRange, groupEventsByDay } from "@/entities/event/lib/events-by-day";
+import { useMergedEvents } from "@/features/editor/model/content";
 import { getEventStatus } from "@/shared/api/events";
+import { eventHref } from "@/shared/api/routes";
 import { formatDayMonth, getWeekBounds, monthKey, monthOf } from "@/shared/lib/date";
 import { useToday } from "@/shared/lib/use-today";
 import { Card } from "@/shared/ui/card/card";
@@ -24,11 +26,12 @@ type CalendarPanelProps = {
   events: Event[];
 };
 
-export function CalendarPanel({ events }: CalendarPanelProps): JSX.Element {
+export function CalendarPanel({ events: baseEvents }: CalendarPanelProps): JSX.Element {
   const today = useToday();
+  const events = useMergedEvents(baseEvents);
   const router = useRouter();
   const [pickedMonth, setPickedMonth] = useState<MonthRef | null>(null);
-  const byDay = useMemo(() => groupEventsByDay(events), [events]);
+  const byDay = groupEventsByDay(events);
 
   if (!today) {
     return (
@@ -84,7 +87,7 @@ export function CalendarPanel({ events }: CalendarPanelProps): JSX.Element {
         <ul className={styles["agenda-list"]}>
           {agenda.slice(0, AGENDA_LIMIT).map((event) => (
             <li key={event.slug}>
-              <Link href={`/events/${event.slug}`} className={styles["agenda-item"]}>
+              <Link href={eventHref(event.slug)} className={styles["agenda-item"]}>
                 <span className={styles["agenda-date"]}>{formatDayMonth(event.startDate)}</span>
                 <span className={styles["agenda-text"]}>
                   <span className={styles["agenda-name"]}>{event.title}</span>

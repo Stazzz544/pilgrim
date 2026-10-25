@@ -1,5 +1,3 @@
-import { AlbumTile } from "@/entities/album/ui/album-tile";
-import { PostPreviewCard } from "@/entities/post/ui/post-preview-card";
 import { getAlbums, getPosts } from "@/shared/api/content";
 import { getEvents } from "@/shared/api/events";
 import { SITE } from "@/shared/config/site";
@@ -8,6 +6,7 @@ import { LinkCard } from "@/shared/ui/link-card/link-card";
 import { SectionHeader } from "@/shared/ui/section-header/section-header";
 import { CalendarPanel } from "@/widgets/calendar-panel/calendar-panel";
 import { HomeHero } from "@/widgets/home-hero/home-hero";
+import { GalleryPreview, NotesPreview } from "@/widgets/home-previews/home-previews";
 import { UpcomingEvents } from "@/widgets/upcoming-events/upcoming-events";
 
 import styles from "./home.module.css";
@@ -20,7 +19,6 @@ export default async function HomePage() {
     getPosts(),
     getAlbums(),
   ]);
-  const homeAlbums = HOME_ALBUMS.flatMap((slug) => albums.filter((album) => album.slug === slug));
 
   return (
     <>
@@ -65,11 +63,7 @@ export default async function HomePage() {
               href="/blog"
               linkLabel="Все записи"
             />
-            <div className={styles["notes"]}>
-              {posts.slice(0, 3).map((post) => (
-                <PostPreviewCard key={post.slug} post={post} />
-              ))}
-            </div>
+            <NotesPreview posts={posts} />
           </section>
 
           <section aria-labelledby="gallery-title">
@@ -80,11 +74,7 @@ export default async function HomePage() {
               href="/gallery"
               linkLabel="Вся галерея"
             />
-            <div className={styles["gallery"]}>
-              {homeAlbums.map((album) => (
-                <AlbumTile key={album.slug} album={album} />
-              ))}
-            </div>
+            <GalleryPreview albums={albums} featured={HOME_ALBUMS} />
           </section>
         </div>
       </div>

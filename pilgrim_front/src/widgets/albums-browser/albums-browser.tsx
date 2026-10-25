@@ -3,6 +3,7 @@
 import { useSearchParams } from "next/navigation";
 
 import { AlbumCard } from "@/entities/album/ui/album-card";
+import { useMergedAlbums } from "@/features/editor/model/content";
 import { replaceSearchParams } from "@/shared/lib/search-params";
 import { Chips } from "@/shared/ui/chips/chips";
 
@@ -16,7 +17,8 @@ type AlbumsBrowserProps = {
   categories: Category[];
 };
 
-export function AlbumsBrowser({ albums, categories }: AlbumsBrowserProps): JSX.Element {
+export function AlbumsBrowser({ albums: baseAlbums, categories }: AlbumsBrowserProps): JSX.Element {
+  const albums = useMergedAlbums(baseAlbums);
   const searchParams = useSearchParams();
   const usedCategories = categories.filter((category) =>
     albums.some((album) => album.category.slug === category.slug),

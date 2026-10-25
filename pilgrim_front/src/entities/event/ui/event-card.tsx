@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { eventHref } from "@/shared/api/routes";
 import { asset } from "@/shared/lib/asset";
 import { cn } from "@/shared/lib/cn";
 import { DateBadge } from "@/shared/ui/date-badge/date-badge";
@@ -55,7 +56,7 @@ export function EventCard({
           </div>
         )}
         <Heading className={styles["title"]}>
-          <Link href={`/events/${event.slug}`} className={styles["link"]}>
+          <Link href={eventHref(event.slug)} className={styles["link"]}>
             {event.title}
           </Link>
         </Heading>

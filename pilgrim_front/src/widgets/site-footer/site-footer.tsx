@@ -97,6 +97,7 @@ export function SiteFooter(): JSX.Element {
         </p>
         <p className={styles["meta"]}>
           <span>Демо-версия сайта</span>
+          <Link href="/login">Вход для кураторов</Link>
           <Link href="/credits">Фотографии: Wikimedia Commons</Link>
         </p>
       </div>

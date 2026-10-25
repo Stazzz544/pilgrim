@@ -149,6 +149,7 @@ export const EVENTS: Event[] = [
     cover: PHOTOS.gergetiKazbek,
     albumSlug: "kazbegi-2026",
     curator: "Ирина",
+    authorId: "activist",
     price: "Расходы делим поровну, ориентир — 45 000 ₽ без перелёта",
     groupSize: "до 12 человек",
     program: [
@@ -334,6 +335,7 @@ export const EVENTS: Event[] = [
     cover: PHOTOS.auroraCoast,
     albumSlug: "aurora-teriberka-2025",
     curator: "Ирина",
+    authorId: "activist",
     price: "Расходы делим поровну, ориентир — 28 000 ₽ без перелёта",
     groupSize: "до 12 человек",
     program: [
@@ -519,6 +521,7 @@ export const EVENTS: Event[] = [
     cover: PHOTOS.tatevMonastery,
     albumSlug: null,
     curator: "Ирина",
+    authorId: "activist",
     price: "Расходы делим поровну, ориентир — 50 000 ₽ без перелёта",
     groupSize: "до 12 человек",
     program: [

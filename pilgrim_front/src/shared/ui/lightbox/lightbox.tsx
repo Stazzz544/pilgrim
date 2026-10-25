@@ -126,9 +126,20 @@ export function Lightbox({ photos, index, onIndexChange }: LightboxProps): JSX.E
               />
               <figcaption className={styles["caption"]}>
                 <span>{photo.alt}</span>
-                <a href={photo.credit.sourceUrl} target="_blank" rel="noopener noreferrer" className={styles["credit"]}>
-                  Фото: {photo.credit.author}, {photo.credit.license}
-                </a>
+                {photo.credit.sourceUrl ? (
+                  <a
+                    href={photo.credit.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles["credit"]}
+                  >
+                    Фото: {photo.credit.author}, {photo.credit.license}
+                  </a>
+                ) : (
+                  <span className={styles["credit"]}>
+                    Фото: {photo.credit.author}, {photo.credit.license}
+                  </span>
+                )}
               </figcaption>
             </figure>
             {photos.length > 1 && (

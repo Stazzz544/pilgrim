@@ -1,6 +1,7 @@
 "use client";
 
 import { getEventStatus } from "@/shared/api/events";
+import { eventHref } from "@/shared/api/routes";
 import { absoluteUrl } from "@/shared/config/site";
 import { buildIcs, downloadFile } from "@/shared/lib/ics";
 import { useToday } from "@/shared/lib/use-today";
@@ -36,7 +37,7 @@ export function AddToCalendarButton({ event, fullWidth }: AddToCalendarButtonPro
       location: `${event.location}, ${event.region}`,
       startDate: event.startDate,
       endDate: event.endDate,
-      url: absoluteUrl(`/events/${event.slug}/`),
+      url: absoluteUrl(eventHref(event.slug)),
     });
     downloadFile(ics, `pilgrim-${event.slug}.ics`, "text/calendar;charset=utf-8");
   };

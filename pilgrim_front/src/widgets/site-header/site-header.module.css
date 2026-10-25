@@ -148,3 +148,9 @@ img.drawer-logo {
     display: none;
   }
 }
+
+@media (max-width: 640px) {
+  .editor {
+    display: none;
+  }
+}

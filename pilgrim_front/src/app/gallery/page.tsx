@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 
 import { AlbumCard } from "@/entities/album/ui/album-card";
+import { EditorAddButton } from "@/features/editor/ui/editor-buttons";
 import { getAlbums, getCategories } from "@/shared/api/content";
 import { AlbumsBrowser } from "@/widgets/albums-browser/albums-browser";
 
@@ -18,8 +19,13 @@ export default async function GalleryPage() {
 
   return (
     <div className="container page">
-      <h1 className="page-title">Галерея моментов</h1>
-      <p className="page-lead">Фотоотчёты с прошедших мероприятий по направлениям нашей активности.</p>
+      <header className="page-header">
+        <div>
+          <h1 className="page-title">Галерея моментов</h1>
+          <p className="page-lead">Фотоотчёты с прошедших мероприятий по направлениям нашей активности.</p>
+        </div>
+        <EditorAddButton kind="albums" />
+      </header>
       <div className="page-body">
         <Suspense
           fallback={
