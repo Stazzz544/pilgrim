@@ -1,0 +1,138 @@
+.lightbox {
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--color-lightbox);
+  color: var(--color-on-overlay);
+}
+
+.lightbox[open] {
+  display: flex;
+  flex-direction: column;
+  animation: fade 180ms ease;
+}
+
+.lightbox::backdrop {
+  background: transparent;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+}
+
+.counter {
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.stage {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 0 clamp(var(--space-2), 6vw, 88px) var(--space-5);
+  touch-action: pan-y;
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 0;
+}
+
+.image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 160px);
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+  user-select: none;
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  max-width: 60ch;
+  font-size: var(--text-sm);
+  text-align: center;
+}
+
+.credit {
+  font-size: var(--text-xs);
+  opacity: 0.7;
+}
+
+.credit:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.control {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  transition: background-color var(--transition);
+}
+
+.control:hover {
+  background: var(--color-overlay-hover);
+}
+
+.control:focus-visible {
+  outline-color: var(--color-on-overlay);
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.prev {
+  left: var(--space-2);
+}
+
+.next {
+  right: var(--space-2);
+}
+
+@media (max-width: 640px) {
+  .stage {
+    padding-bottom: 72px;
+  }
+
+  .prev,
+  .next {
+    top: auto;
+    bottom: var(--space-2);
+    translate: none;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}

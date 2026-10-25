@@ -25,6 +25,8 @@
   --color-warning: #8a6418;
   --color-overlay: rgb(14 20 24 / 0.86);
   --color-backdrop: rgb(14 20 24 / 0.5);
+  --color-overlay-hover: rgb(255 255 255 / 0.12);
+  --color-lightbox: rgb(10 14 17 / 0.96);
   --color-on-overlay: #f4f4f2;
   --color-image-placeholder: #dedad2;
 

@@ -30,3 +30,20 @@
   background: var(--color-primary);
   color: var(--color-on-primary);
 }
+
+@media (max-width: 640px) {
+  .chips {
+    flex-wrap: nowrap;
+    padding: 2px 2px 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .chip {
+    flex-shrink: 0;
+  }
+}
