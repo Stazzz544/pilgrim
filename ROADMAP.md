@@ -98,29 +98,29 @@
 
 ## Этап 2. Данные и слой API — M
 
-- [ ] Типы — это контракт будущего DRF:
+- [x] Типы — это контракт будущего DRF:
   - `Event`: slug, title, summary, description, start/end, location, region, difficulty `easy | medium | hard`, categories, cover, albumSlug, vkUrl;
   - `Category`;
   - `Post` с `images[]`;
   - `Album`;
   - `Photo`: src, width, height, alt.
-- [ ] Моки:
+- [x] Моки:
   - ~10 предстоящих и ~6 прошедших мероприятий, даты с сентября 2026 по март 2027;
   - 6 категорий — направления сообщества (см. «Ссылки и контент заказчика») и теги с макета;
   - ~8 записей микроблога;
   - ~5 альбомов.
-- [ ] Фото:
-  - подобрать на Unsplash (свободная лицензия), запасной источник — Wikimedia Commons с атрибуцией;
-  - скачать в webp нужных размеров в `public/images/*`;
-  - записать авторов в `CREDITS.md`.
-- [ ] `shared/api`:
+- [x] Фото:
+  - подобраны на Wikimedia Commons (Unsplash закрыт антибот-защитой), свободные лицензии с атрибуцией;
+  - WebP двух размеров (до 1600 и 760px) в `public/images/photos`;
+  - авторы и лицензии — в `CREDITS.md`.
+- [x] `shared/api`:
   - функции `getEvents({ status, search, category[], ordering })`, `getEvent`, `getCategories`, `getPosts`, `getPost`, `getAlbums`, `getAlbum`;
   - функции асинхронные, ответ в форме DRF `{ count, next, previous, results }`, фильтрация выполняется внутри моков.
-- [ ] Утилиты:
+- [x] Утилиты:
   - форматирование дат через `Intl` `ru-RU`;
   - «сегодня» вычисляется на клиенте: граница «предстоящие / архив» проходит по текущей дате, а не по дате сборки;
   - `asset()` добавляет basePath к путям `public/`. На `next/image` со строковым `src` при экспорте не полагаемся.
-- [ ] `docs/api-contract.md` — эндпойнты и query-параметры будущего бэка.
+- [x] `docs/api-contract.md` — эндпойнты и query-параметры будущего бэка.
 
 ## Этап 3. Оболочка сайта — M
 
@@ -268,3 +268,4 @@
 | 2026-10-25 | —    | Ссылки, контакты и направления взяты с pilgrim-spb.ru. |
 | 2026-10-25 | 0    | Каркас готов: git + remote, Next.js 16.4.3 со статическим экспортом и basePath, lint, type-check и build зелёные. Не закоммичено. |
 | 2026-10-25 | 1    | Токены по макету (палитра снята пипеткой), Lora + Inter, UI-кит: Button/ButtonLink, Tag, DateBadge, SectionHeader, Card, SearchInput, Select, Chips, Modal (native dialog), Skeleton, Icon, Logo. |
+| 2026-10-25 | 2    | Типы контракта, моки (17 мероприятий, 6 категорий, 8 записей, 8 альбомов, 3 поста ВК), 42 фото с Wikimedia Commons в WebP (11 МБ, Unsplash закрыт антибот-защитой), CREDITS.md, docs/api-contract.md. |
