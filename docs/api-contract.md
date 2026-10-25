@@ -26,7 +26,7 @@
 | `GET /albums/`                | `Paginated<Album>`, новые сверху                | `category`, `page`                                            |
 | `GET /albums/{slug}/`         | `Album` с массивом `photos`                     | —                                                             |
 | `GET /vk/posts/`              | `VkPost[]` — последние записи сообщества ВК     | `limit` (по умолчанию 3)                                      |
-| `POST /donations/`            | `{ paymentUrl }` — ссылка на оплату у провайдера | `{ amount, recurring, email? }`                               |
+| `POST /donations/`            | `{ paymentUrl }` — ссылка на оплату у провайдера. Не нужен, если выбран VK Донат: тогда оплата идёт по ссылке на страницу доната сообщества | `{ amount, recurring, email? }`                               |
 
 ### Редактирование (этапы 11 и B11–B12)
 

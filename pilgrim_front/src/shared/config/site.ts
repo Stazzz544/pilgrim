@@ -15,7 +15,7 @@ export const SITE = {
     "Сообщество PILGRIM: походы, сплавы, поездки и события для своих. Календарь мероприятий, заметки и фотоотчёты.",
   foundedYear: 2019,
   vk: {
-    community: `https://vk.ru/club${VK_GROUP_ID}`,
+    community: "https://vk.ru/pilgrim_trvl",
     chats: `https://vk.ru/wall-${VK_GROUP_ID}_12713`,
     market: `https://vk.ru/market-${VK_GROUP_ID}?screen=group`,
     reviews: `https://vk.ru/topic-${VK_GROUP_ID}_47217244?offset=0`,
