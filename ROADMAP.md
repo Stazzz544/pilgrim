@@ -78,23 +78,23 @@
 
 ## Этап 1. Дизайн-система — M
 
-- [ ] Токены в `:root`, снятые с макета:
+- [x] Токены в `:root`, снятые с макета:
   - фон тёплый светлый, текст тёмный, акцент серо-синий;
   - muted-текст, бордеры, радиусы, тени;
   - шкала отступов, шкала типографики, брейкпоинты.
-- [ ] Шрифты через `next/font/google` с subset `cyrillic`:
-  - serif для заголовков — Lora или PT Serif, выбрать по макету;
+- [x] Шрифты через `next/font/google` с subset `cyrillic`:
+  - serif для заголовков — Lora;
   - sans для текста — Inter.
-- [ ] Reset и base-стили, `.container`, fluid-сетки (`auto-fit/minmax`, `min-width: 0`).
-- [ ] UI-кит:
-  - [ ] `Button` — primary, outline, ссылка со стрелкой;
-  - [ ] `Tag`, `Card`;
-  - [ ] `DateBadge` — «17 / ОКТ»;
-  - [ ] `SectionHeader` — заголовок + «Все … →»;
-  - [ ] `SearchInput`, `Select`, `Chips` (мультивыбор);
-  - [ ] `Modal`, `Skeleton`;
-  - [ ] `Icon` — inline SVG: календарь, метка, сложность, сердце, стрелки, VK, бургер.
-- [ ] Логотип PILGRIM в SVG: горы + подпись «походы и приключения».
+- [x] Reset и base-стили, `.container`, fluid-сетки (`auto-fit/minmax`, `min-width: 0`).
+- [x] UI-кит:
+  - [x] `Button` — primary, outline, ссылка со стрелкой;
+  - [x] `Tag`, `Card`;
+  - [x] `DateBadge` — «17 / ОКТ»;
+  - [x] `SectionHeader` — заголовок + «Все … →»;
+  - [x] `SearchInput`, `Select`, `Chips` (мультивыбор);
+  - [x] `Modal`, `Skeleton`;
+  - [x] `Icon` — inline SVG: календарь, метка, сложность, сердце, стрелки, VK, бургер.
+- [x] Логотип PILGRIM в SVG: горы + подпись «походы и приключения».
 
 ## Этап 2. Данные и слой API — M
 
@@ -267,3 +267,4 @@
 | 2026-10-25 | —    | Роадмап создан, решения зафиксированы. |
 | 2026-10-25 | —    | Ссылки, контакты и направления взяты с pilgrim-spb.ru. |
 | 2026-10-25 | 0    | Каркас готов: git + remote, Next.js 16.4.3 со статическим экспортом и basePath, lint, type-check и build зелёные. Не закоммичено. |
+| 2026-10-25 | 1    | Токены по макету (палитра снята пипеткой), Lora + Inter, UI-кит: Button/ButtonLink, Tag, DateBadge, SectionHeader, Card, SearchInput, Select, Chips, Modal (native dialog), Skeleton, Icon, Logo. |

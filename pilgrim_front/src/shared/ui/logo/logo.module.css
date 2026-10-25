@@ -1,0 +1,56 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  color: var(--color-text);
+}
+
+.mark {
+  flex-shrink: 0;
+  width: 64px;
+  height: auto;
+}
+
+.sm .mark {
+  width: 50px;
+}
+
+.mountains {
+  fill: currentColor;
+}
+
+.snow {
+  fill: var(--color-bg);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1;
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.sm .name {
+  font-size: 1.3rem;
+}
+
+.tagline {
+  margin-top: 3px;
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.sm .tagline {
+  font-size: 0.5rem;
+}
