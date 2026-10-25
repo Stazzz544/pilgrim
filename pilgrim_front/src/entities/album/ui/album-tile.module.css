@@ -1,0 +1,41 @@
+.tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-image-placeholder);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.caption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: var(--space-5) var(--space-2) var(--space-2);
+  background: linear-gradient(transparent, var(--color-overlay));
+  font-size: var(--text-xs);
+  line-height: 1.3;
+  color: var(--color-on-overlay);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.tile:hover .image,
+.tile:focus-visible .image {
+  transform: scale(1.05);
+}
+
+.tile:hover .caption,
+.tile:focus-visible .caption {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .caption {
+    opacity: 1;
+  }
+}

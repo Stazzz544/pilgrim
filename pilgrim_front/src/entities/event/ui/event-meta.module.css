@@ -1,0 +1,48 @@
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-text-secondary);
+}
+
+.md {
+  font-size: var(--text-sm);
+}
+
+.sm {
+  font-size: var(--text-xs);
+}
+
+.meta li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.meta svg {
+  flex-shrink: 0;
+  margin-top: 0.15em;
+  color: var(--color-text-muted);
+}
+
+.difficulty {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.difficulty svg {
+  margin-top: 0;
+}
+
+.bar {
+  fill: var(--color-border-strong);
+}
+
+.bar-active {
+  fill: var(--color-primary);
+}

@@ -1,0 +1,166 @@
+.calendar {
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.title {
+  font-size: var(--text-lg);
+  text-align: center;
+}
+
+.full .title {
+  font-size: var(--text-2xl);
+}
+
+.nav {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text);
+}
+
+.nav:hover {
+  background: var(--color-surface-hover);
+}
+
+.grid {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.weekday {
+  padding-bottom: var(--space-2);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.cell {
+  padding: 2px 0;
+  text-align: center;
+  vertical-align: top;
+}
+
+.day {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  font-size: var(--text-xs);
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+button.day:hover {
+  outline: 2px solid var(--color-primary-muted);
+}
+
+.has-event {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.has-past-event {
+  background: var(--color-primary-muted);
+  color: var(--color-text);
+}
+
+.today {
+  box-shadow:
+    0 0 0 2px var(--color-bg-elevated),
+    0 0 0 4px var(--color-primary);
+}
+
+.selected.has-event,
+.selected.has-past-event {
+  background: var(--color-primary-active);
+  color: var(--color-on-primary);
+}
+
+.full .grid {
+  border: 1px solid var(--color-border);
+}
+
+.full .weekday {
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.full .cell {
+  height: clamp(88px, 9vw, 118px);
+  padding: 0;
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.full .day {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+  border-radius: 0;
+  font-size: var(--text-sm);
+  text-align: left;
+}
+
+.full .number {
+  align-self: flex-start;
+  display: grid;
+  place-items: center;
+  min-width: 26px;
+  height: 26px;
+  border-radius: 50%;
+}
+
+.full .has-event,
+.full .has-past-event {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.full button.day:hover {
+  outline: none;
+  background: var(--color-surface-hover);
+}
+
+.full .today {
+  box-shadow: none;
+}
+
+.full .today .number {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.full .selected {
+  background: var(--color-primary-subtle);
+}
+
+.full .selected.has-event,
+.full .selected.has-past-event {
+  background: var(--color-primary-subtle);
+  color: var(--color-text);
+}

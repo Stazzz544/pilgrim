@@ -1,6 +1,14 @@
 const VK_GROUP_ID = "97716803";
 
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/$/, "");
+
+export function absoluteUrl(path: string): string {
+  return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
 export const SITE = {
+  url: SITE_URL,
+  ogImage: absoluteUrl("/images/photos/hero-ridge-sunrise.webp"),
   name: "PILGRIM",
   tagline: "Походы и приключения",
   description:
