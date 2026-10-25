@@ -214,19 +214,19 @@
 
 ## Этап 10. Публикация на GitHub Pages — S
 
-- [ ] `.github/workflows/deploy.yml`, запуск на push в `main`:
+- [x] `.github/workflows/deploy.yml`, запуск на push в `main`:
   - `npm ci`, `lint`, `type-check`;
   - `build` с basePath из `actions/configure-pages`;
   - `upload-pages-artifact` (`pilgrim_front/out`) → `deploy-pages`.
-- [ ] Создать публичный репозиторий через `gh repo create`. Имя согласовать перед созданием.
-- [ ] В настройках Pages выбрать Source: GitHub Actions.
-- [ ] Проверить живой сайт:
+- [x] Публичный репозиторий https://github.com/Stazzz544/pilgrim — создан пользователем.
+- [x] В настройках Pages выбрать Source: GitHub Actions.
+- [x] Проверить живой сайт:
   - все страницы;
   - картинки грузятся с basePath;
   - прямой заход и F5 на вложенных роутах;
   - страница 404.
-- [ ] README: ссылка на демо, скриншоты, стек, как запустить, что дальше.
-- [ ] **DoD:** есть ссылка для заказчика.
+- [x] README: ссылка на демо, скриншоты, стек, как запустить, что дальше.
+- [x] **DoD:** есть ссылка для заказчика.
 
 ---
 
@@ -276,3 +276,4 @@
 | 2026-10-25 | 7    | /gallery: альбомы с фильтром по направлениям (в URL), на мобилке чипы листаются горизонтально. /gallery/[slug]: masonry, лайтбокс на native dialog (стрелки, Esc, свайп, счётчик, автор и лицензия), связь с мероприятием. /credits — авторы фото. |
 | 2026-10-25 | 8    | /donate: на что идут средства, разово/ежемесячно, пресеты и своя сумма с валидацией (100–300 000 ₽), демо-модалка вместо оплаты, «Стать активистом» и магазин ВК. VK Donut у сообщества не найден — альтернатива «Написать организатору». Кликами проверено на 1280/360. |
 | 2026-10-25 | 9    | metadata/OG (абсолютные URL с basePath), sitemap.xml (40 адресов), robots.txt, favicon, JSON-LD. a11y: skip-link, видимый фокус, aria у иконок и календаря, muted-текст затемнён до контраста ≥4.5. Тёмная тема на тех же токенах: переключатель в шапке, без мигания (скрипт в head), запоминается. Lighthouse не прогонялся. Найден баг Next 16.4 на Windows: сегменты префетча экспортируются папками вместо файлов (404 на префетч, навигация работает) — на Linux в CI не воспроизводится. |
+| 2026-10-25 | 10   | Workflow deploy.yml (lint → type-check → build → Pages), Pages включены через API (Source: GitHub Actions), экшены обновлены до актуальных мажоров (configure-pages v6, upload-pages-artifact v5, deploy-pages v5). На живом сайте найден и исправлен баг: фильтры писали в URL путь без basePath (/pilgrim терялся) — теперь replaceSearchParams по location.pathname. Демо: https://stazzz544.github.io/pilgrim/ |

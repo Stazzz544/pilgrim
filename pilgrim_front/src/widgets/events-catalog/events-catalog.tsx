@@ -1,12 +1,13 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 import { DIFFICULTY_LABELS, DIFFICULTY_OPTIONS } from "@/entities/event/model/difficulty";
 import { EventCard, EventCardSkeleton } from "@/entities/event/ui/event-card";
 import { filterEvents, getEventStatus } from "@/shared/api/events";
 import { plural } from "@/shared/lib/plural";
+import { replaceSearchParams } from "@/shared/lib/search-params";
 import { useToday } from "@/shared/lib/use-today";
 import { Button, ButtonLink } from "@/shared/ui/button/button";
 import { Chips } from "@/shared/ui/chips/chips";
@@ -48,7 +49,6 @@ type EventsCatalogProps = {
 
 export function EventsCatalog({ events, categories, scope }: EventsCatalogProps): JSX.Element {
   const today = useToday();
-  const pathname = usePathname();
   const searchParams = useSearchParams();
   const [search, setSearch] = useState(() => searchParams.get("q") ?? "");
 
@@ -74,13 +74,12 @@ export function EventsCatalog({ events, categories, scope }: EventsCatalogProps)
       }
     }
 
-    const query = params.toString();
-    window.history.replaceState(null, "", query ? `${pathname}?${query}` : pathname);
+    replaceSearchParams(params);
   };
 
   const resetFilters = (): void => {
     setSearch("");
-    window.history.replaceState(null, "", pathname);
+    replaceSearchParams({});
   };
 
   const results = today

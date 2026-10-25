@@ -1,8 +1,9 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 import { AlbumCard } from "@/entities/album/ui/album-card";
+import { replaceSearchParams } from "@/shared/lib/search-params";
 import { Chips } from "@/shared/ui/chips/chips";
 
 import type { Album, Category, CategorySlug } from "@/shared/api/types";
@@ -16,7 +17,6 @@ type AlbumsBrowserProps = {
 };
 
 export function AlbumsBrowser({ albums, categories }: AlbumsBrowserProps): JSX.Element {
-  const pathname = usePathname();
   const searchParams = useSearchParams();
   const usedCategories = categories.filter((category) =>
     albums.some((album) => album.category.slug === category.slug),
@@ -27,7 +27,7 @@ export function AlbumsBrowser({ albums, categories }: AlbumsBrowserProps): JSX.E
 
   const select = (values: CategorySlug[]): void => {
     const next = values.find((value) => value !== selected) ?? null;
-    window.history.replaceState(null, "", next ? `${pathname}?category=${next}` : pathname);
+    replaceSearchParams(next ? { category: next } : {});
   };
 
   return (

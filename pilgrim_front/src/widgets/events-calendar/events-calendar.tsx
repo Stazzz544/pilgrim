@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 
 import { eventsInRange, groupEventsByDay } from "@/entities/event/lib/events-by-day";
@@ -16,6 +16,7 @@ import {
   parseMonthKey,
 } from "@/shared/lib/date";
 import { plural } from "@/shared/lib/plural";
+import { replaceSearchParams } from "@/shared/lib/search-params";
 import { useToday } from "@/shared/lib/use-today";
 import { Button } from "@/shared/ui/button/button";
 import { MonthCalendar } from "@/shared/ui/month-calendar/month-calendar";
@@ -39,7 +40,6 @@ type EventsCalendarProps = {
 
 export function EventsCalendar({ events }: EventsCalendarProps): JSX.Element {
   const today = useToday();
-  const pathname = usePathname();
   const searchParams = useSearchParams();
   const byDay = useMemo(() => groupEventsByDay(events), [events]);
 
@@ -59,7 +59,7 @@ export function EventsCalendar({ events }: EventsCalendarProps): JSX.Element {
       params.set("day", day);
     }
 
-    window.history.replaceState(null, "", `${pathname}?${params}`);
+    replaceSearchParams(params);
   };
 
   const monthStart = dateKeyFromParts(month.year, month.month, 1);
