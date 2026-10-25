@@ -7,11 +7,11 @@ import type { JSX } from "react";
 
 import styles from "./home-hero.module.css";
 
-const HERO_LARGE_SRC = "/images/photos/hero-lake-trail-2880.webp";
-const HERO_MOBILE_SRC = "/images/photos/hero-lake-trail-mobile.webp";
+const HERO_LARGE_SRC = "/images/photos/hero-trek-2880.webp";
+const HERO_MOBILE_SRC = "/images/photos/hero-trek-mobile.webp";
 
 export function HomeHero(): JSX.Element {
-  const photo = PHOTOS.heroLakeTrail;
+  const photo = PHOTOS.heroTrek;
 
   return (
     <section className={styles["hero"]} aria-labelledby="hero-title">

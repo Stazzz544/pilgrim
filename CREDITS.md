@@ -4,7 +4,7 @@
 
 | Фото | Автор | Лицензия | Источник |
 | ---- | ----- | -------- | -------- |
-| Горная тропа над озером Гран-Мезон в Альпах | Hélène Rival | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sentier_Cochettes_Lac_Panorama.jpg) |
+| Двое туристов с рюкзаками идут по тропе к заснеженной вершине (главный экран) | freestockimages.ru | бесплатная фотография | [akspic.ru](https://akspic.ru/image/146815-gornyj_relef-nebo-pohod-gornyj_hrebet-lednik) |
 | Путешественник на скалистом гребне среди облаков | kallerna | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mangart_9.jpg) |
 | Каменистый берег карельского озера | Petritap | CC BY-SA 3.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Typical_rocky_shores_of_Lake_Saimaa.jpg) |
 | Деревянный домик на берегу Ладожского озера | Александр Байдуков | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ladoga_skerries_national_Park._Sortavalsky_district._View_from_the_highway.jpg) |

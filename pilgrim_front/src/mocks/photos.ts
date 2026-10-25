@@ -1,17 +1,17 @@
 import type { Photo } from "@/shared/api/types";
 
 export const PHOTOS = {
-  heroLakeTrail: {
-    id: "hero-lake-trail",
-    src: "/images/photos/hero-lake-trail.webp",
-    thumbSrc: "/images/photos/hero-lake-trail-sm.webp",
+  heroTrek: {
+    id: "hero-trek",
+    src: "/images/photos/hero-trek.webp",
+    thumbSrc: "/images/photos/hero-trek-sm.webp",
     width: 1600,
-    height: 737,
-    alt: "Горная тропа над озером Гран-Мезон в Альпах",
+    height: 1067,
+    alt: "Двое туристов с рюкзаками идут по тропе к заснеженной вершине",
     credit: {
-      author: "Hélène Rival",
-      license: "CC BY-SA 4.0",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:Sentier_Cochettes_Lac_Panorama.jpg",
+      author: "freestockimages.ru",
+      license: "бесплатная фотография",
+      sourceUrl: "https://akspic.ru/image/146815-gornyj_relef-nebo-pohod-gornyj_hrebet-lednik",
     },
   },
   hikerRedRidge: {
