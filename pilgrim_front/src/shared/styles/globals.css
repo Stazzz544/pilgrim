@@ -23,6 +23,7 @@
   --color-success-subtle: #e3efe7;
   --color-warning-subtle: #f6ecd6;
   --color-warning: #8a6418;
+  --color-danger: #b23f3a;
   --color-overlay: rgb(14 20 24 / 0.86);
   --color-backdrop: rgb(14 20 24 / 0.5);
   --color-overlay-hover: rgb(255 255 255 / 0.12);
@@ -78,6 +79,7 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-padding-top: calc(var(--header-height) + var(--space-4));
+  scrollbar-gutter: stable;
 }
 
 body {

@@ -82,6 +82,7 @@
 
 .full-width {
   width: 100%;
+  white-space: normal;
 }
 
 .icon-only {
