@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: `${SITE.name} — ${SITE.tagline.toLowerCase()}`,
     description: SITE.description,
-    images: [{ url: SITE.ogImage, width: 1800, height: 1200, alt: "Горный хребет на рассвете" }],
+    images: [{ url: SITE.ogImage, width: 1600, height: 1067, alt: "Горный хребет на рассвете" }],
   },
 };
 

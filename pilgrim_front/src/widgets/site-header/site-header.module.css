@@ -73,6 +73,12 @@
   background: var(--color-surface-hover);
 }
 
+img.drawer-logo {
+  align-self: center;
+  width: 150px;
+  margin-top: calc(-1 * var(--space-6));
+}
+
 .drawer-nav {
   flex: 1;
 }
@@ -114,6 +120,12 @@
 
 @media (max-width: 1080px) {
   .nav {
+    display: none;
+  }
+}
+
+@media (min-width: 1081px) {
+  .burger {
     display: none;
   }
 }

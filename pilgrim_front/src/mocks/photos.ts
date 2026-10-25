@@ -5,8 +5,8 @@ export const PHOTOS = {
     id: "hero-ridge-sunrise",
     src: "/images/photos/hero-ridge-sunrise.webp",
     thumbSrc: "/images/photos/hero-ridge-sunrise-sm.webp",
-    width: 1800,
-    height: 1200,
+    width: 1600,
+    height: 1067,
     alt: "Горный хребет на рассвете над морем облаков",
     credit: {
       author: "Theo Crazzolara",

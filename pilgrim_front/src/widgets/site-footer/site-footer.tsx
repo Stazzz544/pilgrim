@@ -4,7 +4,7 @@ import { MAIN_NAV, SECONDARY_NAV, VK_NAV } from "@/shared/config/navigation";
 import { SITE } from "@/shared/config/site";
 import { ButtonLink } from "@/shared/ui/button/button";
 import { Icon } from "@/shared/ui/icon/icon";
-import { Logo } from "@/shared/ui/logo/logo";
+import { LogoFull } from "@/shared/ui/logo/logo";
 
 import type { JSX } from "react";
 
@@ -17,7 +17,7 @@ export function SiteFooter(): JSX.Element {
     <footer className={styles["footer"]} id="about">
       <div className={`container ${styles["grid"]}`}>
         <section className={styles["about"]} aria-labelledby="footer-about">
-          <Logo size="sm" />
+          <LogoFull />
           <h2 id="footer-about" className="visually-hidden">
             О сообществе
           </h2>

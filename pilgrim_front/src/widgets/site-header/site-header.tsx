@@ -8,7 +8,7 @@ import { MAIN_NAV, SECONDARY_NAV, isActivePath } from "@/shared/config/navigatio
 import { SITE } from "@/shared/config/site";
 import { ButtonLink } from "@/shared/ui/button/button";
 import { Icon } from "@/shared/ui/icon/icon";
-import { Logo } from "@/shared/ui/logo/logo";
+import { Logo, LogoFull } from "@/shared/ui/logo/logo";
 import { Modal } from "@/shared/ui/modal/modal";
 import { ThemeToggle } from "@/shared/ui/theme-toggle/theme-toggle";
 
@@ -61,7 +61,7 @@ export function SiteHeader(): JSX.Element {
           <ThemeToggle className={`${styles["icon-link"]} ${styles["theme"]}`} />
           <button
             type="button"
-            className={styles["icon-link"]}
+            className={`${styles["icon-link"]} ${styles["burger"]}`}
             aria-label="Открыть меню"
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen(true)}
@@ -72,6 +72,7 @@ export function SiteHeader(): JSX.Element {
       </div>
 
       <Modal open={isMenuOpen} onClose={closeMenu} title="Меню" hideTitle variant="drawer">
+        <LogoFull className={styles["drawer-logo"]} />
         <nav aria-label="Меню сайта" className={styles["drawer-nav"]}>
           <ul className={styles["drawer-list"]}>
             {[{ href: "/", label: "Главная" }, ...MAIN_NAV, ...DRAWER_EXTRA_NAV].map((item) => (
