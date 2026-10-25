@@ -119,6 +119,18 @@
 }
 
 @media (max-width: 640px) {
+  .inner {
+    gap: var(--space-3);
+  }
+
+  .logo {
+    flex-shrink: 1;
+  }
+
+  .actions {
+    gap: 0;
+  }
+
   .support,
   .icon-link:not(:last-child, .theme) {
     display: none;
