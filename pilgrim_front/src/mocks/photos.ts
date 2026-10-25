@@ -1,17 +1,17 @@
 import type { Photo } from "@/shared/api/types";
 
 export const PHOTOS = {
-  heroRidgeSunrise: {
-    id: "hero-ridge-sunrise",
-    src: "/images/photos/hero-ridge-sunrise.webp",
-    thumbSrc: "/images/photos/hero-ridge-sunrise-sm.webp",
+  heroLakeTrail: {
+    id: "hero-lake-trail",
+    src: "/images/photos/hero-lake-trail.webp",
+    thumbSrc: "/images/photos/hero-lake-trail-sm.webp",
     width: 1600,
-    height: 1067,
-    alt: "Горный хребет на рассвете над морем облаков",
+    height: 737,
+    alt: "Горная тропа над озером Гран-Мезон в Альпах",
     credit: {
-      author: "Theo Crazzolara",
-      license: "CC BY 2.0",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:Schieferstein_Sunrise_-_Flickr_-_Theo_Crazzolara.jpg",
+      author: "Hélène Rival",
+      license: "CC BY-SA 4.0",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Sentier_Cochettes_Lac_Panorama.jpg",
     },
   },
   hikerRedRidge: {

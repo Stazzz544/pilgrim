@@ -8,7 +8,7 @@ export function absoluteUrl(path: string): string {
 
 export const SITE = {
   url: SITE_URL,
-  ogImage: absoluteUrl("/images/photos/hero-ridge-sunrise.webp"),
+  ogImage: absoluteUrl("/images/photos/hero-lake-trail.webp"),
   name: "PILGRIM",
   tagline: "Походы и приключения",
   description:

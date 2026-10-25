@@ -7,17 +7,20 @@ import type { JSX } from "react";
 
 import styles from "./home-hero.module.css";
 
-const HERO_LARGE_SRC = "/images/photos/hero-ridge-sunrise-2880.webp";
+const HERO_LARGE_SRC = "/images/photos/hero-lake-trail-2880.webp";
+const HERO_MOBILE_SRC = "/images/photos/hero-lake-trail-mobile.webp";
 
 export function HomeHero(): JSX.Element {
-  const photo = PHOTOS.heroRidgeSunrise;
+  const photo = PHOTOS.heroLakeTrail;
 
   return (
     <section className={styles["hero"]} aria-labelledby="hero-title">
       <picture>
-        <source media="(min-width: 801px)" srcSet={asset(HERO_LARGE_SRC)} />
+        <source media="(max-width: 640px)" srcSet={asset(HERO_MOBILE_SRC)} />
         <img
           src={asset(photo.src)}
+          srcSet={`${asset(photo.src)} ${photo.width}w, ${asset(HERO_LARGE_SRC)} 2880w`}
+          sizes="100vw"
           alt=""
           width={photo.width}
           height={photo.height}

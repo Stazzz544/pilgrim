@@ -28,7 +28,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 60%;
+  object-position: center 40%;
 }
 
 .content {
@@ -71,7 +71,7 @@
   }
 
   .image {
-    object-position: 70% center;
+    object-position: center;
   }
 
   .content {
